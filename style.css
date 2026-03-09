@@ -1,0 +1,132 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffe5e5;
+            /* allow vertical scrolling on smaller devices */
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 500px;
+            margin: 20px;
+            position: relative;
+            /* make tall content scrollable */
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .sticker {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 2.2rem;
+            margin: 15px 0;
+        }
+        p {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn a {
+            text-decoration: none;
+            color: #fff;
+            background: #e91e63;
+            padding: 12px 30px;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(233,30,99,0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .btn a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233,30,99,0.4);
+        }
+        #move-random {
+            cursor: pointer;
+            background: #ff4081 !important;
+        }
+        .proposal-screen {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Floating hearts */
+
+        /* responsive adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            .btn a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .sticker {
+                width: 150px;
+                height: 150px;
+            }
+            .container {
+                margin: 10px;
+                gap: 15px;
+            }
+        }
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    font-size:20px;
+    animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(100vh) scale(0.5);
+        opacity:0;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-10vh) scale(1.2);
+        opacity:0;
+    }
+}
